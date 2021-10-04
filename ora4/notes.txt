@@ -1,0 +1,15 @@
+http://localhost:8761/
+http://localhost:8080/order
+http://localhost:8082/deliver
+http://localhost:8000/order
+http://localhost:8082/deliver
+
+eureka
+ gateway
+  storage-service (2)
+  order-service
+
+A feign kliens lekérdezi az eurekátol a meghívandó kliens listáját és eldönti melyiknek küldje (client-loadbalance)
+A gateway esetén a feign kliens a gateway-t hívja meg és az kérdezi le az eurekatól a listát illetve ő dönti el hogy melyik node-ra továbbítja a kérést.
+
+
