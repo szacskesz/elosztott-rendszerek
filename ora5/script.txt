@@ -1,0 +1,7 @@
+LINK: https://github.com/kryzsu/multi-pardigmas-programozas/tree/main/Java
+
+docker pull sonarqube
+
+docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
+
+mvn clean verify sonar:sonar -Dsonar.projectKey=<projectKey (emailservice)> -Dsonar.host.url=<url (http://localhost:9000)> -Dsonar.login=<authKey>

@@ -1,0 +1,47 @@
+POST
+http://localhost:8080/chat
+{
+  "id": "1.",
+  "message": "testMessage",
+  "sender": "senderIsME",
+  "roomId": "firstRoom",
+  "roomName": "classroom"
+}
+
+------------------------
+
+GET
+http://localhost:8080/chat
+{
+  "query": "senderIsME"
+}
+
+returns 1 element
+
+--------------------
+
+GET
+http://localhost:8080/chat
+{
+  "query": "senderIsME0"
+}
+
+returns 0 element
+
+----------------------
+
+GET
+http://localhost:8080/chat/by-message
+{
+  "query": "testMessage"
+}
+returns 1 element
+
+--------------------
+
+GET
+http://localhost:8080/chat/by-message
+{
+  "query": "testMessage0"
+}
+returns 0 element
